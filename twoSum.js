@@ -9,8 +9,18 @@
 const twoSum = (array, target) => {
   let retArray = [];
   for (let i = 0; i < array.length; i++) {
-    retArray.push(array[i]);
+    let ele1 = array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      let ele2 = array[j];
+      if (ele1 + ele2 === target) {
+        retArray.push(i, j);
+        return retArray;
+      }
+    }
   }
   return retArray;
+  // for (let i = 0; i < array.length; i++) {
+  //   retArray.push(array[i]);
+  // }
 };
 module.exports = twoSum;
